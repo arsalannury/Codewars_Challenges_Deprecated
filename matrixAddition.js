@@ -3,30 +3,45 @@ function matrixAddition(a, b) {
   let bArrOutIndex = 0;
   let aArrList = [];
   let bArrList = [];
+  let sumA = [];
+  let sumB = [];
+  let result = [];
 
-  while (aArrOutIndex < a.length) {
-    aArrList.push(a[aArrOutIndex]);
-    aArrOutIndex++;
-  } 
-  while (bArrOutIndex < b.length) {
-    bArrList.push(b[bArrOutIndex]);
-    bArrOutIndex++;
+  // while (aArrOutIndex < a.length) {
+  //   aArrList.push(a[aArrOutIndex]);
+  //   aArrOutIndex++;
+  // }
+  // while (bArrOutIndex < b.length) {
+  //   bArrList.push(b[bArrOutIndex]);
+  //   bArrOutIndex++;
+  // }
+
+  for (let index = 0; index < a.length; index++) {
+    aArrList.push(a[index]);
+    bArrList.push(b[index]);
   }
 
   for (let index = 0; index < a.length; index++) {
-    aArrList[index].map(item => {
-      bArrList[index].map(itemb => {
-        console.log(item, "item");
-        console.log(itemb, "itemb");
-          })
-        })   
+    aArrList[index].map((itemA) => {
+      sumA.push(itemA);
+    });
+    bArrList[index].map((itemB) => {
+      sumB.push(itemB);
+    });
+  }
+
+  for (let index = 0; index < sumA.length; index++) {
+    let sumNumbers = sumA[index] + sumB[index];
+    result.push(sumNumbers);
   }
 
   return {
-    a: aArrList,
-    b: bArrList
-  }
-
+    // a: aArrList,
+    // b: bArrList,
+    // aa: sumA,
+    // bb: sumB,
+    res: result,
+  };
 }
 
 console.log(
@@ -44,4 +59,3 @@ console.log(
     ]
   )
 );
-
