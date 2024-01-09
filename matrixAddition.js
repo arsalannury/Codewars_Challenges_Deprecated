@@ -25,29 +25,24 @@ function matrixAddition(a, b) {
   }
 
   for (let index = 0; index <= arrayOfSum.length; index++) {
-    const slice = arrayOfSum.slice(0,aArrList[0].length);
-    console.log(slice);
+    if (aArrList[index] !== undefined) {
+      // console.log(aArrList);
+      const slice = arrayOfSum.slice(0, aArrList[0].length);
+      console.log(slice);
+    }
   }
-
-  return {
-    res: arrayOfSum,
-  };
 }
 
-console.log(
-  matrixAddition(
-    [
-      [1, 2, 3],
-      [3, 2, 1],
-      [1, 1, 1],
-      [1, 1, 1],
-    ],
-    //      +
-    [
-      [2, 2, 1],
-      [3, 2, 3],
-      [1, 1, 3],
-      [1, 1, 3],
-    ]
-  )
+matrixAddition(
+  [
+    [1, 2, 3],
+    [3, 2, 1],
+    [1, 1, 1],
+  ],
+  //      +
+  [
+    [2, 2, 1],
+    [3, 2, 3],
+    [1, 1, 3],
+  ]
 );
