@@ -1,48 +1,27 @@
 function matrixAddition(a, b) {
-  let aArrList = [];
-  let bArrList = [];
-  let sumA = [];
-  let sumB = [];
-  let arrayOfSum = [];
-
-  for (let index = 0; index < a.length; index++) {
-    aArrList.push(a[index]);
-    bArrList.push(b[index]);
-  }
-
-  for (let index = 0; index < a.length; index++) {
-    aArrList[index].map((itemA) => {
-      sumA.push(itemA);
-    });
-    bArrList[index].map((itemB) => {
-      sumB.push(itemB);
-    });
-  }
-
-  for (let index = 0; index < sumA.length; index++) {
-    let sumNumbers = sumA[index] + sumB[index];
-    arrayOfSum.push(sumNumbers);
-  }
-
-  for (let index = 0; index <= arrayOfSum.length; index++) {
-    if (aArrList[index] !== undefined) {
-      // console.log(aArrList);
-      const slice = arrayOfSum.slice(0, aArrList[0].length);
-      console.log(slice);
+  const list = [];
+  for (let iterable = 0; iterable <= a.length; iterable++) {
+    if (a[iterable]) {
+      const calc = a[iterable].map((num, index) => num + b[iterable][index]);
+      list.push(calc);
     }
   }
+  return list;
 }
 
 matrixAddition(
   [
-    [1, 2, 3],
-    [3, 2, 1],
-    [1, 1, 1],
+    [1, 2, 3, 1],
+    [3, 2, 1, 4],
+    [1, 1, 1, 2],
   ],
-  //      +
   [
-    [2, 2, 1],
-    [3, 2, 3],
-    [1, 1, 3],
+    [2, 2, 1, 1],
+    [3, 2, 3, 4],
+    [1, 1, 3, 2],
   ]
 );
+
+// [1, 2, 3, 1] + [2, 2, 1, 1] = [3,4,4,2]
+// [3, 2, 1, 4] + [3, 2, 3, 4] = [6,4,4,8]
+// [1, 1, 1, 2] + [1, 1, 3, 2] = [2,2,4,4]
